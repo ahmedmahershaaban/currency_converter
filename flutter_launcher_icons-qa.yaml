@@ -1,0 +1,10 @@
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/launcher_icon/currency_converter_qa.png"
+  remove_alpha_ios: true
+  web:
+    generate: true
+    image_path: "assets/launcher_icon/currency_converter_qa.png"
+    background_color: "#hexcode"
+    theme_color: "#hexcode"
