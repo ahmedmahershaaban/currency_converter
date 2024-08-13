@@ -1,16 +1,14 @@
-# currency_converter
+# Currency Converter 
 
-A new Flutter project.
+## Overview
 
-## Getting Started
+This README will be updated with a detailed description of the project, including its architecture and technology stack. Meanwhile, you can access screenshots, videos, and other related files in this [Google Drive folder](https://drive.google.com/drive/folders/1OZ0nV2mlqdCAV5AhlrGPZtW_keSxHI2r?usp=sharing).
 
-This project is a starting point for a Flutter application.
+## Architecture and Technology
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Building the App
+
+
+
