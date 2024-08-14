@@ -1,4 +1,4 @@
-# CurrencyConverter 📈💱
+# Currency Converter APP 📈💱
 
 ## Table of Contents 📑
 
@@ -35,7 +35,7 @@
 
 
 
-**CurrencyConverter** is a Flutter application designed to convert currencies seamlessly. It features a robust architecture using Domain-Driven Design (DDD) and supports multiple environments through Flutter flavors. This README provides a comprehensive overview of the app, including its features, architecture, and development details.
+**Currency Converter APP** is a Flutter application designed to convert currencies seamlessly. It features a robust architecture using Domain-Driven Design (DDD) and supports multiple environments through Flutter flavors. This README provides a comprehensive overview of the app, including its features, architecture, and development details.
 
 ### Note 📝
 
