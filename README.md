@@ -17,13 +17,23 @@
     - [Unit Testing](#unit-testing)
     - [Feature Implementations](#feature-implementations)
     - [Figma Design](#figma-design)
-- [Installation and Running](#installation-and-running)
-- [Screenshots](#screenshots)
-- [Video](#video)
-- [Postman](#postman)
-- [License](#license)
+- [Google Drive](#Google-Drive)
+    - [Main Folder](#Main-Folder)
+    - [Videos](#videos)
+    - [Screenshots](#Screenshots)
+- [Project Installation and Setup Guide](#Project-Installation-and-Setup-Guide)
+    - [Installation](#Installation)
+    - [Prerequisites](#Prerequisites)
+    - [Clone the Repository](#Clone-the-Repository)
+    - [Setup Configuration Files](#Setup-Configuration-Files)
+    - [Running the Application](#Running-the-Application)
+    - [Building the Project](#Building-the-Project)
+    
+
 
 ## Overview 🌟
+
+
 
 **CurrencyConverter** is a Flutter application designed to convert currencies seamlessly. It features a robust architecture using Domain-Driven Design (DDD) and supports multiple environments through Flutter flavors. This README provides a comprehensive overview of the app, including its features, architecture, and development details.
 
@@ -118,10 +128,159 @@ Flutter flavors are used to manage multiple environments with a single codebase:
 
 - **Design Reference**: Imported and adapted a Figma design from the community. Updated the design for pixel-perfect accuracy in the app. Some UI details were adjusted due to incomplete color schemes and theme information in the Figma file.
 
-## Installation and Running 🛠️
+## Google Drive 🗂️
 
-To set up and run the project locally:
+### Main Folder 📂
+This folder contains the screenshots, videos, and detailed explanations of the app's features.
+[Main Folder](https://drive.google.com/drive/folders/1OZ0nV2mlqdCAV5AhlrGPZtW_keSxHI2r?usp=sharing)
 
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/yourusername/CurrencyConverter.git
+### Videos 🎥
+Access the videos showcasing the app here: [Videos](https://drive.google.com/drive/folders/1-CM9ODsafMFLtFsIp6GwULVpzEfZ16uF?usp=drive_link)
+
+### Screenshots 📸
+View the app screenshots here: [Screenshots](https://drive.google.com/drive/folders/1d-qijtLQt3vxh0K3-2vvUMCmITYECBb8?usp=drive_link)
+
+## Project Installation and Setup Guide ⚙️
+
+### Installation 🛠️
+
+#### Prerequisites 📦
+
+Ensure you have the latest version of Flutter installed. As of [2024/08/14], the latest stable version is:
+
+```bash
+Flutter (Channel stable, 3.24.0, on Microsoft Windows [Version 10.0.22631.3958], locale en-US)
+```
+
+If you already have Flutter installed, please upgrade it to the latest version by running:
+
+```bash
+flutter upgrade
+```
+
+If you do not have Flutter installed, follow the official Flutter documentation for installation: [Flutter Installation Guide](https://docs.flutter.dev/get-started/install). This guide provides instructions for all available operating systems.
+
+#### Clone the Repository 📂
+
+To get a copy of this repository, run the following command in your terminal:
+
+```bash
+git clone https://github.com/ahmedmahershaaban/currency_converter.git
+```
+
+#### Setup Configuration Files ⚙️
+
+Navigate to the project folder. You should see the following structure:
+
+```plaintext
+-currency_converter
+    -android
+    -ios
+    -lib
+    -config
+    -test
+```
+
+You need to add a `config` folder. If the folder does not exist, you can:
+
+1. Create an empty folder named `config`.
+2. Inside the `config` folder, create three files:
+    - `app_config_dev.json`
+    - `app_config_qa.json`
+    - `app_config_prod.json`
+
+3. Add the following JSON content to each file:
+
+**`app_config_dev.json`**
+```json
+{
+  "countriesFlagBaseAPI": "https://flagcdn.com/",
+  "currencyConverterBaseAPI": "https://prepaid.currconv.com/api/v7/",
+  "currencyConverterAPIKey": "Register and add your own obtained APIKEY"
+}
+```
+
+**`app_config_qa.json`**
+```json
+{
+  "countriesFlagBaseAPI": "https://flagcdn.com/",
+  "currencyConverterBaseAPI": "https://prepaid.currconv.com/api/v7/",
+  "currencyConverterAPIKey": "Register and add your own obtained APIKEY"
+}
+```
+
+**`app_config_prod.json`**
+```json
+{
+  "countriesFlagBaseAPI": "https://flagcdn.com/",
+  "currencyConverterBaseAPI": "https://prepaid.currconv.com/api/v7/",
+  "currencyConverterAPIKey": "Register and add your own obtained APIKEY"
+}
+```
+
+If you need the `config` folder and files, please contact me at [ahmedmaher13579@outlook.com](mailto:ahmedmaher13579@outlook.com), and I will provide them. Alternatively, create the folder and files as described above.
+
+You should end up with the following:
+
+```plaintext
+-currency_converter
+    -android
+    -ios
+    -lib
+    -config
+        -app_config_dev.json
+        -app_config_qa.json
+        -app_config_prod.json
+    -test
+```
+
+#### Running the Application 🚀
+
+Open the project folder in your preferred editor. Since this project uses Flutter flavors, the default run command will not work. I've configured the flavors for Android Studio, and the settings should be included in the project. If you are using a different editor or encounter issues, use the following commands in your terminal:
+
+To run the project:
+
+- For production:
+
+```bash
+flutter run --flavor prod -t lib/main_prod.dart
+```
+
+- For development:
+
+```bash
+flutter run --flavor dev -t lib/main_dev.dart
+```
+
+- For quality assurance:
+
+```bash
+flutter run --flavor qa -t lib/main_qa.dart
+```
+
+#### Building the Project 🔨
+
+To build the project, use the following commands:
+
+- For production:
+
+```bash
+flutter build apk --flavor prod -t lib/main_prod.dart --release
+```
+
+- For development:
+
+```bash
+flutter build apk --flavor dev -t lib/main_dev.dart --release
+```
+
+- For quality assurance:
+
+```bash
+flutter build apk --flavor qa -t lib/main_qa.dart --release
+```
+
+If you encounter any issues or errors, please do not hesitate to contact me at [ahmedmaher13579@outlook.com](mailto:ahmedmaher13579@outlook.com).
+
+
+
