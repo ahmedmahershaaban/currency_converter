@@ -1,14 +1,14 @@
 import 'package:bloc/bloc.dart';
 import 'package:bloc_concurrency/bloc_concurrency.dart';
-import 'package:currency_converter/application/core/theme/theme_event.dart';
-import 'package:currency_converter/application/core/theme/theme_state.dart';
+import 'package:currency_converter/application/shared/theme/theme_event.dart';
+import 'package:currency_converter/application/shared/theme/theme_state.dart';
 import 'package:currency_converter/application/user_flow/user_flow_bloc.dart';
 import 'package:currency_converter/application/user_flow/user_flow_event.dart';
+import 'package:currency_converter/domain/shared/shared_preferences_repository.dart';
 import 'package:currency_converter/infrastructure/core/injection/injection.dart';
 import 'package:currency_converter/presentation/core/themes/app_themes.dart';
 import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 const String themePreferenceKey = 'THEME_DATA';
 
@@ -16,7 +16,7 @@ const String themePreferenceKey = 'THEME_DATA';
 /// The `Domain Layer` and `Infrastructure Layer` have already been documented.
 @LazySingleton()
 class ThemeBloc extends Bloc<ThemeEvent, ThemeState> {
-  final SharedPreferences _prefs;
+  final SharedPreferencesRepository _prefs;
   ThemeBloc(this._prefs) : super(ThemeState.initial()) {
     on<ThemeChanged>(_onThemeChanged, transformer: restartable());
     on<InitializeThemeData>(_onInitializeThemeData, transformer: restartable());

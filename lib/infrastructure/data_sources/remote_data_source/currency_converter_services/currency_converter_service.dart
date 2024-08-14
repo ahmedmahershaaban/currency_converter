@@ -6,10 +6,12 @@ import 'package:currency_converter/infrastructure/data_sources/remote_data_sourc
 import 'package:currency_converter/infrastructure/user_flow/conversion_history_model_dto/conversion_history_model_dto.dart';
 import 'package:currency_converter/infrastructure/user_flow/country_names_with_flags_model_dto/country_names_with_flags_model_dto.dart';
 import 'package:currency_converter/infrastructure/user_flow/currency_conversion_model_dto/currency_conversion_model_dto.dart';
+import 'package:injectable/injectable.dart';
 
 part 'currency_converter_service.chopper.dart';
 
 @ChopperApi()
+@injectable
 abstract class CurrencyConverterService extends ChopperService {
   @FactoryConverter(
     request: countryConversionModelDtoConverterRequestFactory,
@@ -38,6 +40,7 @@ abstract class CurrencyConverterService extends ChopperService {
     @Query('endDate') required String endDate,
   });
 
+  @factoryMethod
   static CurrencyConverterService create({required String baseUrl, required String apiKey}) {
     final client = ChopperClient(
       baseUrl: Uri.parse(baseUrl),

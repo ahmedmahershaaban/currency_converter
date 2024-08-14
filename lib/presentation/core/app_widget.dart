@@ -1,5 +1,5 @@
-import 'package:currency_converter/application/core/theme/theme_bloc.dart';
-import 'package:currency_converter/application/core/theme/theme_state.dart';
+import 'package:currency_converter/application/shared/theme/theme_bloc.dart';
+import 'package:currency_converter/application/shared/theme/theme_state.dart';
 import 'package:currency_converter/application/user_flow/user_flow_bloc.dart';
 import 'package:currency_converter/infrastructure/core/injection/injection.dart';
 import 'package:currency_converter/presentation/core/app_config.dart';

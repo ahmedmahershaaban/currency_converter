@@ -42,18 +42,18 @@ class UserFlowBloc extends Bloc<UserFlowEvent, UserFlowState> {
     add(const UserFlowEvent.loadAllNeededDataForUserFlowEvent());
   }
 
-  void _onThemeModeChangedEvent(ThemeModeChangedEvent event, Emitter<UserFlowState> emit) async {
+  Future<void> _onThemeModeChangedEvent(ThemeModeChangedEvent event, Emitter<UserFlowState> emit) async {
     emit(state.copyWith(
       placeHolderForThemeChange: !state.placeHolderForThemeChange,
       userFlowFailureOrSuccessOption: none(),
     ));
   }
 
-  void _onLoadAllNeededDataForUserFlowEvent(LoadAllNeededDataForUserFlowEvent event, Emitter<UserFlowState> emit) async {
+  Future<void> _onLoadAllNeededDataForUserFlowEvent(LoadAllNeededDataForUserFlowEvent event, Emitter<UserFlowState> emit) async {
     add(const UserFlowEvent.getAllCountriesNamesAndFlagsEvent());
   }
 
-  void _onGetAllCountriesNamesAndFlagsEvent(GetAllCountriesNamesAndFlagsEvent event, Emitter<UserFlowState> emit) async {
+  Future<void> _onGetAllCountriesNamesAndFlagsEvent(GetAllCountriesNamesAndFlagsEvent event, Emitter<UserFlowState> emit) async {
     emit(state.copyWith(
       isLoadingForCountriesAndFlags: true,
       userFlowFailureOrSuccessOption: none(),
@@ -98,7 +98,7 @@ class UserFlowBloc extends Bloc<UserFlowEvent, UserFlowState> {
     });
   }
 
-  void _onGetCurrencyConversionNowEvent(GetCurrencyConversionNowEvent event, Emitter<UserFlowState> emit) async {
+  Future<void> _onGetCurrencyConversionNowEvent(GetCurrencyConversionNowEvent event, Emitter<UserFlowState> emit) async {
     emit(state.copyWith(
       isLoadingForCurrencyConversion: true,
       userFlowFailureOrSuccessOption: none(),
@@ -125,7 +125,7 @@ class UserFlowBloc extends Bloc<UserFlowEvent, UserFlowState> {
     });
   }
 
-  void _onGetCurrencyConversionHistoryEvent(GetCurrencyConversionHistoryEvent event, Emitter<UserFlowState> emit) async {
+  Future<void> _onGetCurrencyConversionHistoryEvent(GetCurrencyConversionHistoryEvent event, Emitter<UserFlowState> emit) async {
     emit(state.copyWith(
       isLoadingForConversionHistory: true,
       userFlowFailureOrSuccessOption: none(),
@@ -162,7 +162,7 @@ class UserFlowBloc extends Bloc<UserFlowEvent, UserFlowState> {
     }
   }
 
-  void _onUpdateNumberOfWeeksForHistoryEvent(UpdateNumberOfWeeksForHistoryEvent event, Emitter<UserFlowState> emit) async {
+  Future<void> _onUpdateNumberOfWeeksForHistoryEvent(UpdateNumberOfWeeksForHistoryEvent event, Emitter<UserFlowState> emit) async {
     emit(state.copyWith(
       numberOfWeeksForHistory: event.number,
       userFlowFailureOrSuccessOption: none(),
@@ -176,7 +176,7 @@ class UserFlowBloc extends Bloc<UserFlowEvent, UserFlowState> {
   /// 2- if not valid reset the from json
   /// 3- if valid make the conversion logic
   /// 4- update the state again
-  void _onUpdateFromCurrencyValueEvent(UpdateFromCurrencyValueEvent event, Emitter<UserFlowState> emit) async {
+  Future<void> _onUpdateFromCurrencyValueEvent(UpdateFromCurrencyValueEvent event, Emitter<UserFlowState> emit) async {
     // to always show the error even if it was the same error!
     // resetting the state
     emit(state.copyWith(
@@ -219,7 +219,7 @@ class UserFlowBloc extends Bloc<UserFlowEvent, UserFlowState> {
     }
   }
 
-  void _onUpdateIsCurrencyFlippedEvent(UpdateIsCurrencyFlippedEvent event, Emitter<UserFlowState> emit) async {
+  Future<void> _onUpdateIsCurrencyFlippedEvent(UpdateIsCurrencyFlippedEvent event, Emitter<UserFlowState> emit) async {
     emit(state.copyWith(
       userFlowFailureOrSuccessOption: none(),
     ));
@@ -250,7 +250,7 @@ class UserFlowBloc extends Bloc<UserFlowEvent, UserFlowState> {
     });
   }
 
-  void _onUpdateFromCountrySelectedEvent(UpdateFromCountrySelectedEvent event, Emitter<UserFlowState> emit) async {
+  Future<void> _onUpdateFromCountrySelectedEvent(UpdateFromCountrySelectedEvent event, Emitter<UserFlowState> emit) async {
     emit(state.copyWith(
       userFlowFailureOrSuccessOption: none(),
     ));
@@ -272,7 +272,7 @@ class UserFlowBloc extends Bloc<UserFlowEvent, UserFlowState> {
     );
   }
 
-  void _onUpdateToCountrySelectedEvent(UpdateToCountrySelectedEvent event, Emitter<UserFlowState> emit) async {
+  Future<void> _onUpdateToCountrySelectedEvent(UpdateToCountrySelectedEvent event, Emitter<UserFlowState> emit) async {
     emit(state.copyWith(
       userFlowFailureOrSuccessOption: none(),
     ));

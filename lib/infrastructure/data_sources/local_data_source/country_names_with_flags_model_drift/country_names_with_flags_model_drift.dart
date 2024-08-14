@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:drift/drift.dart';
 import 'package:drift_flutter/drift_flutter.dart';
+import 'package:injectable/injectable.dart';
 
 part 'country_names_with_flags_model_drift.g.dart';
 
@@ -16,6 +17,7 @@ class CountryNamesWithFlags extends Table {
   TextColumn get currencySymbol => text().withLength(min: 1, max: 30)();
 }
 
+@injectable
 @DriftDatabase(tables: [CountryNamesWithFlags], daos: [CountryNamesWithFlagsModelDriftDao])
 class AppDatabase extends _$AppDatabase {
   AppDatabase() : super(driftDatabase(name: 'my_database'));
@@ -28,11 +30,12 @@ class AppDatabase extends _$AppDatabase {
 class CountryNamesWithFlagsModelDriftDao extends DatabaseAccessor<AppDatabase> with _$CountryNamesWithFlagsModelDriftDaoMixin {
   final AppDatabase db;
   CountryNamesWithFlagsModelDriftDao(this.db) : super(db);
-
   Stream<List<CountryNamesWithFlagsModelDrift>> watchAllCountriesWithFlags() => select(countryNamesWithFlags).watch();
   Future<List<CountryNamesWithFlagsModelDrift>> getAllCountriesWithFlags() => select(countryNamesWithFlags).get();
-  Future insertCountryWithFlags(Insertable<CountryNamesWithFlagsModelDrift> countryWithFlag) => into(countryNamesWithFlags).insert(countryWithFlag);
-  Future updateCountryWithFlags(Insertable<CountryNamesWithFlagsModelDrift> countryWithFlag) =>
+  Future<int> insertCountryWithFlags(Insertable<CountryNamesWithFlagsModelDrift> countryWithFlag) =>
+      into(countryNamesWithFlags).insert(countryWithFlag);
+  Future<bool> updateCountryWithFlags(Insertable<CountryNamesWithFlagsModelDrift> countryWithFlag) =>
       update(countryNamesWithFlags).replace(countryWithFlag);
-  Future deleteCountryWithFlags(Insertable<CountryNamesWithFlagsModelDrift> countryWithFlag) => delete(countryNamesWithFlags).delete(countryWithFlag);
+  Future<int> deleteCountryWithFlags(Insertable<CountryNamesWithFlagsModelDrift> countryWithFlag) =>
+      delete(countryNamesWithFlags).delete(countryWithFlag);
 }

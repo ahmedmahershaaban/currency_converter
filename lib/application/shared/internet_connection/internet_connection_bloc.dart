@@ -1,8 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:bloc_concurrency/bloc_concurrency.dart';
-import 'package:connectivity_plus/connectivity_plus.dart';
+import 'package:currency_converter/domain/shared/connectivity_repository.dart';
+import 'package:currency_converter/domain/shared/internet_connection_repository.dart';
 import 'package:injectable/injectable.dart';
-import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
 
 import 'internet_connection_event.dart';
 import 'internet_connection_state.dart';
@@ -11,8 +11,8 @@ import 'internet_connection_state.dart';
 /// The `Domain Layer` and `Infrastructure Layer` have already been documented.
 @Singleton()
 class InternetConnectionBloc extends Bloc<InternetConnectionEvent, InternetConnectionState> {
-  final Connectivity _connectivity;
-  final InternetConnection _internetConnection;
+  final ConnectivityRepository _connectivity;
+  final InternetConnectionRepository _internetConnection;
   bool forTheFirstTime = true;
   InternetConnectionBloc(this._connectivity, this._internetConnection) : super(const InternetConnectionState.initial()) {
     on<RegisterListenerForDeviceConnectivity>(_onRegisterListenerForDeviceConnectivity, transformer: restartable());
