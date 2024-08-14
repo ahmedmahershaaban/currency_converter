@@ -87,21 +87,26 @@ extension GetItInjectableX on _i174.GetIt {
         () => thirdPartyLibrariesModule.connectivity);
     gh.lazySingleton<_i161.InternetConnection>(
         () => thirdPartyLibrariesModule.internetConnection);
+    gh.factory<_i295.CurrencyConverterService>(
+        () => _i295.CurrencyConverterService.create(
+              baseUrl: gh<String>(instanceName: 'currencyConverterBaseUrl'),
+              apiKey: gh<String>(instanceName: 'currencyConverterApiKey'),
+            ));
+    gh.factory<_i117.FlagCdnService>(() => _i117.FlagCdnService.create(
+        baseUrl: gh<String>(instanceName: 'flagCdnBaseUrl')));
     gh.lazySingleton<_i674.InternetConnectionRepository>(() =>
         _i646.InternetConnectionRepositoryImpl(gh<_i161.InternetConnection>()));
     gh.lazySingleton<_i1000.ConnectivityRepository>(
         () => _i139.ConnectivityRepositoryImpl(gh<_i895.Connectivity>()));
+    gh.lazySingleton<_i1062.CurrencyConverterRepository>(() =>
+        _i302.CurrencyConverterRepositoryImpl(
+            currencyConverterService: gh<_i295.CurrencyConverterService>()));
     gh.factory<_i316.CountryNamesWithFlagsModelDriftDao>(
         () => registerModule.countryNamesWithFlagsModelDriftDao);
+    gh.lazySingleton<_i279.FlagCdnRepository>(() => _i212.FlagCdnRepositoryImpl(
+        flagCdnService: gh<_i117.FlagCdnService>()));
     gh.lazySingleton<_i127.SharedPreferencesRepository>(() =>
         _i533.SharedPreferencesRepositoryImpl(gh<_i460.SharedPreferences>()));
-    gh.factory<_i295.CurrencyConverterService>(
-        () => _i295.CurrencyConverterService.create(
-              baseUrl: gh<String>(),
-              apiKey: gh<String>(),
-            ));
-    gh.factory<_i117.FlagCdnService>(
-        () => _i117.FlagCdnService.create(baseUrl: gh<String>()));
     gh.lazySingleton<_i59.CountryNamesWithFlagsDriftDaoRepository>(() =>
         _i233.CountryNamesWithFlagsDriftDaoRepositoryImpl(
             countryNamesWithFlagsModelDriftDao:
@@ -111,11 +116,6 @@ extension GetItInjectableX on _i174.GetIt {
               gh<_i1000.ConnectivityRepository>(),
               gh<_i674.InternetConnectionRepository>(),
             ));
-    gh.lazySingleton<_i1062.CurrencyConverterRepository>(() =>
-        _i302.CurrencyConverterRepositoryImpl(
-            currencyConverterService: gh<_i295.CurrencyConverterService>()));
-    gh.lazySingleton<_i279.FlagCdnRepository>(() => _i212.FlagCdnRepositoryImpl(
-        flagCdnService: gh<_i117.FlagCdnService>()));
     gh.lazySingleton<_i391.ThemeBloc>(
         () => _i391.ThemeBloc(gh<_i127.SharedPreferencesRepository>()));
     gh.lazySingleton<_i772.IUserFlowFacade>(() => _i716.UserFlowFacade(

@@ -13,7 +13,7 @@ abstract class FlagCdnService extends ChopperService {
   });
 
   @factoryMethod
-  static FlagCdnService create({required String baseUrl}) {
+  static FlagCdnService create({@Named('flagCdnBaseUrl') required String baseUrl}) {
     final client = ChopperClient(
       baseUrl: Uri.parse(baseUrl),
       services: [

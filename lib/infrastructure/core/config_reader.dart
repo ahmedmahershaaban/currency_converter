@@ -24,19 +24,11 @@ abstract class ConfigReader {
 
   static String get countriesFlagBaseAPI => _config['countriesFlagBaseAPI'] as String;
 
-  static String currencyConverterBaseAPI() {
-    return _config['currencyConverterBaseAPI'] as String;
-  }
+  static String get currencyConverterBaseAPI => _config['currencyConverterBaseAPI'] as String;
 
-  static String currencyConverterAPIKey() {
-    return _config['currencyConverterAPIKey'] as String;
-  }
+  static String get currencyConverterAPIKey => _config['currencyConverterAPIKey'] as String;
 
-  static String currencyFreaksBaseAPI() {
-    return _config['currencyFreaksBaseAPI'] as String;
-  }
+  static String get currencyFreaksBaseAPI => _config['currencyFreaksBaseAPI'] as String;
 
-  static String currencyFreaksAPIKey() {
-    return _config['currencyFreaksAPIKey'] as String;
-  }
+  static String get currencyFreaksAPIKey => _config['currencyFreaksAPIKey'] as String;
 }

@@ -19,7 +19,6 @@ mixin _$UserFlowEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() themeModeChangedEvent,
-    required TResult Function() loadAllNeededDataForUserFlowEvent,
     required TResult Function() getAllCountriesNamesAndFlagsEvent,
     required TResult Function() getCurrencyConversionHistoryEvent,
     required TResult Function(ValidatedNormalString fromCurrency,
@@ -41,7 +40,6 @@ mixin _$UserFlowEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? themeModeChangedEvent,
-    TResult? Function()? loadAllNeededDataForUserFlowEvent,
     TResult? Function()? getAllCountriesNamesAndFlagsEvent,
     TResult? Function()? getCurrencyConversionHistoryEvent,
     TResult? Function(ValidatedNormalString fromCurrency,
@@ -59,7 +57,6 @@ mixin _$UserFlowEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? themeModeChangedEvent,
-    TResult Function()? loadAllNeededDataForUserFlowEvent,
     TResult Function()? getAllCountriesNamesAndFlagsEvent,
     TResult Function()? getCurrencyConversionHistoryEvent,
     TResult Function(ValidatedNormalString fromCurrency,
@@ -79,8 +76,6 @@ mixin _$UserFlowEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(ThemeModeChangedEvent value)
         themeModeChangedEvent,
-    required TResult Function(LoadAllNeededDataForUserFlowEvent value)
-        loadAllNeededDataForUserFlowEvent,
     required TResult Function(GetAllCountriesNamesAndFlagsEvent value)
         getAllCountriesNamesAndFlagsEvent,
     required TResult Function(GetCurrencyConversionHistoryEvent value)
@@ -102,8 +97,6 @@ mixin _$UserFlowEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ThemeModeChangedEvent value)? themeModeChangedEvent,
-    TResult? Function(LoadAllNeededDataForUserFlowEvent value)?
-        loadAllNeededDataForUserFlowEvent,
     TResult? Function(GetAllCountriesNamesAndFlagsEvent value)?
         getAllCountriesNamesAndFlagsEvent,
     TResult? Function(GetCurrencyConversionHistoryEvent value)?
@@ -125,8 +118,6 @@ mixin _$UserFlowEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ThemeModeChangedEvent value)? themeModeChangedEvent,
-    TResult Function(LoadAllNeededDataForUserFlowEvent value)?
-        loadAllNeededDataForUserFlowEvent,
     TResult Function(GetAllCountriesNamesAndFlagsEvent value)?
         getAllCountriesNamesAndFlagsEvent,
     TResult Function(GetCurrencyConversionHistoryEvent value)?
@@ -213,7 +204,6 @@ class _$ThemeModeChangedEventImpl implements ThemeModeChangedEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() themeModeChangedEvent,
-    required TResult Function() loadAllNeededDataForUserFlowEvent,
     required TResult Function() getAllCountriesNamesAndFlagsEvent,
     required TResult Function() getCurrencyConversionHistoryEvent,
     required TResult Function(ValidatedNormalString fromCurrency,
@@ -238,7 +228,6 @@ class _$ThemeModeChangedEventImpl implements ThemeModeChangedEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? themeModeChangedEvent,
-    TResult? Function()? loadAllNeededDataForUserFlowEvent,
     TResult? Function()? getAllCountriesNamesAndFlagsEvent,
     TResult? Function()? getCurrencyConversionHistoryEvent,
     TResult? Function(ValidatedNormalString fromCurrency,
@@ -259,7 +248,6 @@ class _$ThemeModeChangedEventImpl implements ThemeModeChangedEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? themeModeChangedEvent,
-    TResult Function()? loadAllNeededDataForUserFlowEvent,
     TResult Function()? getAllCountriesNamesAndFlagsEvent,
     TResult Function()? getCurrencyConversionHistoryEvent,
     TResult Function(ValidatedNormalString fromCurrency,
@@ -285,8 +273,6 @@ class _$ThemeModeChangedEventImpl implements ThemeModeChangedEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(ThemeModeChangedEvent value)
         themeModeChangedEvent,
-    required TResult Function(LoadAllNeededDataForUserFlowEvent value)
-        loadAllNeededDataForUserFlowEvent,
     required TResult Function(GetAllCountriesNamesAndFlagsEvent value)
         getAllCountriesNamesAndFlagsEvent,
     required TResult Function(GetCurrencyConversionHistoryEvent value)
@@ -311,8 +297,6 @@ class _$ThemeModeChangedEventImpl implements ThemeModeChangedEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ThemeModeChangedEvent value)? themeModeChangedEvent,
-    TResult? Function(LoadAllNeededDataForUserFlowEvent value)?
-        loadAllNeededDataForUserFlowEvent,
     TResult? Function(GetAllCountriesNamesAndFlagsEvent value)?
         getAllCountriesNamesAndFlagsEvent,
     TResult? Function(GetCurrencyConversionHistoryEvent value)?
@@ -337,8 +321,6 @@ class _$ThemeModeChangedEventImpl implements ThemeModeChangedEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ThemeModeChangedEvent value)? themeModeChangedEvent,
-    TResult Function(LoadAllNeededDataForUserFlowEvent value)?
-        loadAllNeededDataForUserFlowEvent,
     TResult Function(GetAllCountriesNamesAndFlagsEvent value)?
         getAllCountriesNamesAndFlagsEvent,
     TResult Function(GetCurrencyConversionHistoryEvent value)?
@@ -366,209 +348,6 @@ class _$ThemeModeChangedEventImpl implements ThemeModeChangedEvent {
 
 abstract class ThemeModeChangedEvent implements UserFlowEvent {
   const factory ThemeModeChangedEvent() = _$ThemeModeChangedEventImpl;
-}
-
-/// @nodoc
-abstract class _$$LoadAllNeededDataForUserFlowEventImplCopyWith<$Res> {
-  factory _$$LoadAllNeededDataForUserFlowEventImplCopyWith(
-          _$LoadAllNeededDataForUserFlowEventImpl value,
-          $Res Function(_$LoadAllNeededDataForUserFlowEventImpl) then) =
-      __$$LoadAllNeededDataForUserFlowEventImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$LoadAllNeededDataForUserFlowEventImplCopyWithImpl<$Res>
-    extends _$UserFlowEventCopyWithImpl<$Res,
-        _$LoadAllNeededDataForUserFlowEventImpl>
-    implements _$$LoadAllNeededDataForUserFlowEventImplCopyWith<$Res> {
-  __$$LoadAllNeededDataForUserFlowEventImplCopyWithImpl(
-      _$LoadAllNeededDataForUserFlowEventImpl _value,
-      $Res Function(_$LoadAllNeededDataForUserFlowEventImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of UserFlowEvent
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$LoadAllNeededDataForUserFlowEventImpl
-    implements LoadAllNeededDataForUserFlowEvent {
-  const _$LoadAllNeededDataForUserFlowEventImpl();
-
-  @override
-  String toString() {
-    return 'UserFlowEvent.loadAllNeededDataForUserFlowEvent()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$LoadAllNeededDataForUserFlowEventImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() themeModeChangedEvent,
-    required TResult Function() loadAllNeededDataForUserFlowEvent,
-    required TResult Function() getAllCountriesNamesAndFlagsEvent,
-    required TResult Function() getCurrencyConversionHistoryEvent,
-    required TResult Function(ValidatedNormalString fromCurrency,
-            ValidatedNormalString toCurrency)
-        getCurrencyConversionNowEvent,
-    required TResult Function(
-            CountryNamesWithFlagsModel countryNamesWithFlagsModel)
-        updateFromCountrySelectedEvent,
-    required TResult Function(
-            CountryNamesWithFlagsModel countryNamesWithFlagsModel)
-        updateToCountrySelectedEvent,
-    required TResult Function(ValidatedInt number)
-        updateNumberOfWeeksForHistoryEvent,
-    required TResult Function(ValidatedDouble number)
-        updateFromCurrencyValueEvent,
-    required TResult Function() updateIsCurrencyFlippedEvent,
-  }) {
-    return loadAllNeededDataForUserFlowEvent();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? themeModeChangedEvent,
-    TResult? Function()? loadAllNeededDataForUserFlowEvent,
-    TResult? Function()? getAllCountriesNamesAndFlagsEvent,
-    TResult? Function()? getCurrencyConversionHistoryEvent,
-    TResult? Function(ValidatedNormalString fromCurrency,
-            ValidatedNormalString toCurrency)?
-        getCurrencyConversionNowEvent,
-    TResult? Function(CountryNamesWithFlagsModel countryNamesWithFlagsModel)?
-        updateFromCountrySelectedEvent,
-    TResult? Function(CountryNamesWithFlagsModel countryNamesWithFlagsModel)?
-        updateToCountrySelectedEvent,
-    TResult? Function(ValidatedInt number)? updateNumberOfWeeksForHistoryEvent,
-    TResult? Function(ValidatedDouble number)? updateFromCurrencyValueEvent,
-    TResult? Function()? updateIsCurrencyFlippedEvent,
-  }) {
-    return loadAllNeededDataForUserFlowEvent?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? themeModeChangedEvent,
-    TResult Function()? loadAllNeededDataForUserFlowEvent,
-    TResult Function()? getAllCountriesNamesAndFlagsEvent,
-    TResult Function()? getCurrencyConversionHistoryEvent,
-    TResult Function(ValidatedNormalString fromCurrency,
-            ValidatedNormalString toCurrency)?
-        getCurrencyConversionNowEvent,
-    TResult Function(CountryNamesWithFlagsModel countryNamesWithFlagsModel)?
-        updateFromCountrySelectedEvent,
-    TResult Function(CountryNamesWithFlagsModel countryNamesWithFlagsModel)?
-        updateToCountrySelectedEvent,
-    TResult Function(ValidatedInt number)? updateNumberOfWeeksForHistoryEvent,
-    TResult Function(ValidatedDouble number)? updateFromCurrencyValueEvent,
-    TResult Function()? updateIsCurrencyFlippedEvent,
-    required TResult orElse(),
-  }) {
-    if (loadAllNeededDataForUserFlowEvent != null) {
-      return loadAllNeededDataForUserFlowEvent();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(ThemeModeChangedEvent value)
-        themeModeChangedEvent,
-    required TResult Function(LoadAllNeededDataForUserFlowEvent value)
-        loadAllNeededDataForUserFlowEvent,
-    required TResult Function(GetAllCountriesNamesAndFlagsEvent value)
-        getAllCountriesNamesAndFlagsEvent,
-    required TResult Function(GetCurrencyConversionHistoryEvent value)
-        getCurrencyConversionHistoryEvent,
-    required TResult Function(GetCurrencyConversionNowEvent value)
-        getCurrencyConversionNowEvent,
-    required TResult Function(UpdateFromCountrySelectedEvent value)
-        updateFromCountrySelectedEvent,
-    required TResult Function(UpdateToCountrySelectedEvent value)
-        updateToCountrySelectedEvent,
-    required TResult Function(UpdateNumberOfWeeksForHistoryEvent value)
-        updateNumberOfWeeksForHistoryEvent,
-    required TResult Function(UpdateFromCurrencyValueEvent value)
-        updateFromCurrencyValueEvent,
-    required TResult Function(UpdateIsCurrencyFlippedEvent value)
-        updateIsCurrencyFlippedEvent,
-  }) {
-    return loadAllNeededDataForUserFlowEvent(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ThemeModeChangedEvent value)? themeModeChangedEvent,
-    TResult? Function(LoadAllNeededDataForUserFlowEvent value)?
-        loadAllNeededDataForUserFlowEvent,
-    TResult? Function(GetAllCountriesNamesAndFlagsEvent value)?
-        getAllCountriesNamesAndFlagsEvent,
-    TResult? Function(GetCurrencyConversionHistoryEvent value)?
-        getCurrencyConversionHistoryEvent,
-    TResult? Function(GetCurrencyConversionNowEvent value)?
-        getCurrencyConversionNowEvent,
-    TResult? Function(UpdateFromCountrySelectedEvent value)?
-        updateFromCountrySelectedEvent,
-    TResult? Function(UpdateToCountrySelectedEvent value)?
-        updateToCountrySelectedEvent,
-    TResult? Function(UpdateNumberOfWeeksForHistoryEvent value)?
-        updateNumberOfWeeksForHistoryEvent,
-    TResult? Function(UpdateFromCurrencyValueEvent value)?
-        updateFromCurrencyValueEvent,
-    TResult? Function(UpdateIsCurrencyFlippedEvent value)?
-        updateIsCurrencyFlippedEvent,
-  }) {
-    return loadAllNeededDataForUserFlowEvent?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(ThemeModeChangedEvent value)? themeModeChangedEvent,
-    TResult Function(LoadAllNeededDataForUserFlowEvent value)?
-        loadAllNeededDataForUserFlowEvent,
-    TResult Function(GetAllCountriesNamesAndFlagsEvent value)?
-        getAllCountriesNamesAndFlagsEvent,
-    TResult Function(GetCurrencyConversionHistoryEvent value)?
-        getCurrencyConversionHistoryEvent,
-    TResult Function(GetCurrencyConversionNowEvent value)?
-        getCurrencyConversionNowEvent,
-    TResult Function(UpdateFromCountrySelectedEvent value)?
-        updateFromCountrySelectedEvent,
-    TResult Function(UpdateToCountrySelectedEvent value)?
-        updateToCountrySelectedEvent,
-    TResult Function(UpdateNumberOfWeeksForHistoryEvent value)?
-        updateNumberOfWeeksForHistoryEvent,
-    TResult Function(UpdateFromCurrencyValueEvent value)?
-        updateFromCurrencyValueEvent,
-    TResult Function(UpdateIsCurrencyFlippedEvent value)?
-        updateIsCurrencyFlippedEvent,
-    required TResult orElse(),
-  }) {
-    if (loadAllNeededDataForUserFlowEvent != null) {
-      return loadAllNeededDataForUserFlowEvent(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class LoadAllNeededDataForUserFlowEvent implements UserFlowEvent {
-  const factory LoadAllNeededDataForUserFlowEvent() =
-      _$LoadAllNeededDataForUserFlowEventImpl;
 }
 
 /// @nodoc
@@ -618,7 +397,6 @@ class _$GetAllCountriesNamesAndFlagsEventImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() themeModeChangedEvent,
-    required TResult Function() loadAllNeededDataForUserFlowEvent,
     required TResult Function() getAllCountriesNamesAndFlagsEvent,
     required TResult Function() getCurrencyConversionHistoryEvent,
     required TResult Function(ValidatedNormalString fromCurrency,
@@ -643,7 +421,6 @@ class _$GetAllCountriesNamesAndFlagsEventImpl
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? themeModeChangedEvent,
-    TResult? Function()? loadAllNeededDataForUserFlowEvent,
     TResult? Function()? getAllCountriesNamesAndFlagsEvent,
     TResult? Function()? getCurrencyConversionHistoryEvent,
     TResult? Function(ValidatedNormalString fromCurrency,
@@ -664,7 +441,6 @@ class _$GetAllCountriesNamesAndFlagsEventImpl
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? themeModeChangedEvent,
-    TResult Function()? loadAllNeededDataForUserFlowEvent,
     TResult Function()? getAllCountriesNamesAndFlagsEvent,
     TResult Function()? getCurrencyConversionHistoryEvent,
     TResult Function(ValidatedNormalString fromCurrency,
@@ -690,8 +466,6 @@ class _$GetAllCountriesNamesAndFlagsEventImpl
   TResult map<TResult extends Object?>({
     required TResult Function(ThemeModeChangedEvent value)
         themeModeChangedEvent,
-    required TResult Function(LoadAllNeededDataForUserFlowEvent value)
-        loadAllNeededDataForUserFlowEvent,
     required TResult Function(GetAllCountriesNamesAndFlagsEvent value)
         getAllCountriesNamesAndFlagsEvent,
     required TResult Function(GetCurrencyConversionHistoryEvent value)
@@ -716,8 +490,6 @@ class _$GetAllCountriesNamesAndFlagsEventImpl
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ThemeModeChangedEvent value)? themeModeChangedEvent,
-    TResult? Function(LoadAllNeededDataForUserFlowEvent value)?
-        loadAllNeededDataForUserFlowEvent,
     TResult? Function(GetAllCountriesNamesAndFlagsEvent value)?
         getAllCountriesNamesAndFlagsEvent,
     TResult? Function(GetCurrencyConversionHistoryEvent value)?
@@ -742,8 +514,6 @@ class _$GetAllCountriesNamesAndFlagsEventImpl
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ThemeModeChangedEvent value)? themeModeChangedEvent,
-    TResult Function(LoadAllNeededDataForUserFlowEvent value)?
-        loadAllNeededDataForUserFlowEvent,
     TResult Function(GetAllCountriesNamesAndFlagsEvent value)?
         getAllCountriesNamesAndFlagsEvent,
     TResult Function(GetCurrencyConversionHistoryEvent value)?
@@ -821,7 +591,6 @@ class _$GetCurrencyConversionHistoryEventImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() themeModeChangedEvent,
-    required TResult Function() loadAllNeededDataForUserFlowEvent,
     required TResult Function() getAllCountriesNamesAndFlagsEvent,
     required TResult Function() getCurrencyConversionHistoryEvent,
     required TResult Function(ValidatedNormalString fromCurrency,
@@ -846,7 +615,6 @@ class _$GetCurrencyConversionHistoryEventImpl
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? themeModeChangedEvent,
-    TResult? Function()? loadAllNeededDataForUserFlowEvent,
     TResult? Function()? getAllCountriesNamesAndFlagsEvent,
     TResult? Function()? getCurrencyConversionHistoryEvent,
     TResult? Function(ValidatedNormalString fromCurrency,
@@ -867,7 +635,6 @@ class _$GetCurrencyConversionHistoryEventImpl
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? themeModeChangedEvent,
-    TResult Function()? loadAllNeededDataForUserFlowEvent,
     TResult Function()? getAllCountriesNamesAndFlagsEvent,
     TResult Function()? getCurrencyConversionHistoryEvent,
     TResult Function(ValidatedNormalString fromCurrency,
@@ -893,8 +660,6 @@ class _$GetCurrencyConversionHistoryEventImpl
   TResult map<TResult extends Object?>({
     required TResult Function(ThemeModeChangedEvent value)
         themeModeChangedEvent,
-    required TResult Function(LoadAllNeededDataForUserFlowEvent value)
-        loadAllNeededDataForUserFlowEvent,
     required TResult Function(GetAllCountriesNamesAndFlagsEvent value)
         getAllCountriesNamesAndFlagsEvent,
     required TResult Function(GetCurrencyConversionHistoryEvent value)
@@ -919,8 +684,6 @@ class _$GetCurrencyConversionHistoryEventImpl
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ThemeModeChangedEvent value)? themeModeChangedEvent,
-    TResult? Function(LoadAllNeededDataForUserFlowEvent value)?
-        loadAllNeededDataForUserFlowEvent,
     TResult? Function(GetAllCountriesNamesAndFlagsEvent value)?
         getAllCountriesNamesAndFlagsEvent,
     TResult? Function(GetCurrencyConversionHistoryEvent value)?
@@ -945,8 +708,6 @@ class _$GetCurrencyConversionHistoryEventImpl
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ThemeModeChangedEvent value)? themeModeChangedEvent,
-    TResult Function(LoadAllNeededDataForUserFlowEvent value)?
-        loadAllNeededDataForUserFlowEvent,
     TResult Function(GetAllCountriesNamesAndFlagsEvent value)?
         getAllCountriesNamesAndFlagsEvent,
     TResult Function(GetCurrencyConversionHistoryEvent value)?
@@ -1064,7 +825,6 @@ class _$GetCurrencyConversionNowEventImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() themeModeChangedEvent,
-    required TResult Function() loadAllNeededDataForUserFlowEvent,
     required TResult Function() getAllCountriesNamesAndFlagsEvent,
     required TResult Function() getCurrencyConversionHistoryEvent,
     required TResult Function(ValidatedNormalString fromCurrency,
@@ -1089,7 +849,6 @@ class _$GetCurrencyConversionNowEventImpl
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? themeModeChangedEvent,
-    TResult? Function()? loadAllNeededDataForUserFlowEvent,
     TResult? Function()? getAllCountriesNamesAndFlagsEvent,
     TResult? Function()? getCurrencyConversionHistoryEvent,
     TResult? Function(ValidatedNormalString fromCurrency,
@@ -1110,7 +869,6 @@ class _$GetCurrencyConversionNowEventImpl
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? themeModeChangedEvent,
-    TResult Function()? loadAllNeededDataForUserFlowEvent,
     TResult Function()? getAllCountriesNamesAndFlagsEvent,
     TResult Function()? getCurrencyConversionHistoryEvent,
     TResult Function(ValidatedNormalString fromCurrency,
@@ -1136,8 +894,6 @@ class _$GetCurrencyConversionNowEventImpl
   TResult map<TResult extends Object?>({
     required TResult Function(ThemeModeChangedEvent value)
         themeModeChangedEvent,
-    required TResult Function(LoadAllNeededDataForUserFlowEvent value)
-        loadAllNeededDataForUserFlowEvent,
     required TResult Function(GetAllCountriesNamesAndFlagsEvent value)
         getAllCountriesNamesAndFlagsEvent,
     required TResult Function(GetCurrencyConversionHistoryEvent value)
@@ -1162,8 +918,6 @@ class _$GetCurrencyConversionNowEventImpl
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ThemeModeChangedEvent value)? themeModeChangedEvent,
-    TResult? Function(LoadAllNeededDataForUserFlowEvent value)?
-        loadAllNeededDataForUserFlowEvent,
     TResult? Function(GetAllCountriesNamesAndFlagsEvent value)?
         getAllCountriesNamesAndFlagsEvent,
     TResult? Function(GetCurrencyConversionHistoryEvent value)?
@@ -1188,8 +942,6 @@ class _$GetCurrencyConversionNowEventImpl
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ThemeModeChangedEvent value)? themeModeChangedEvent,
-    TResult Function(LoadAllNeededDataForUserFlowEvent value)?
-        loadAllNeededDataForUserFlowEvent,
     TResult Function(GetAllCountriesNamesAndFlagsEvent value)?
         getAllCountriesNamesAndFlagsEvent,
     TResult Function(GetCurrencyConversionHistoryEvent value)?
@@ -1324,7 +1076,6 @@ class _$UpdateFromCountrySelectedEventImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() themeModeChangedEvent,
-    required TResult Function() loadAllNeededDataForUserFlowEvent,
     required TResult Function() getAllCountriesNamesAndFlagsEvent,
     required TResult Function() getCurrencyConversionHistoryEvent,
     required TResult Function(ValidatedNormalString fromCurrency,
@@ -1349,7 +1100,6 @@ class _$UpdateFromCountrySelectedEventImpl
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? themeModeChangedEvent,
-    TResult? Function()? loadAllNeededDataForUserFlowEvent,
     TResult? Function()? getAllCountriesNamesAndFlagsEvent,
     TResult? Function()? getCurrencyConversionHistoryEvent,
     TResult? Function(ValidatedNormalString fromCurrency,
@@ -1370,7 +1120,6 @@ class _$UpdateFromCountrySelectedEventImpl
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? themeModeChangedEvent,
-    TResult Function()? loadAllNeededDataForUserFlowEvent,
     TResult Function()? getAllCountriesNamesAndFlagsEvent,
     TResult Function()? getCurrencyConversionHistoryEvent,
     TResult Function(ValidatedNormalString fromCurrency,
@@ -1396,8 +1145,6 @@ class _$UpdateFromCountrySelectedEventImpl
   TResult map<TResult extends Object?>({
     required TResult Function(ThemeModeChangedEvent value)
         themeModeChangedEvent,
-    required TResult Function(LoadAllNeededDataForUserFlowEvent value)
-        loadAllNeededDataForUserFlowEvent,
     required TResult Function(GetAllCountriesNamesAndFlagsEvent value)
         getAllCountriesNamesAndFlagsEvent,
     required TResult Function(GetCurrencyConversionHistoryEvent value)
@@ -1422,8 +1169,6 @@ class _$UpdateFromCountrySelectedEventImpl
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ThemeModeChangedEvent value)? themeModeChangedEvent,
-    TResult? Function(LoadAllNeededDataForUserFlowEvent value)?
-        loadAllNeededDataForUserFlowEvent,
     TResult? Function(GetAllCountriesNamesAndFlagsEvent value)?
         getAllCountriesNamesAndFlagsEvent,
     TResult? Function(GetCurrencyConversionHistoryEvent value)?
@@ -1448,8 +1193,6 @@ class _$UpdateFromCountrySelectedEventImpl
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ThemeModeChangedEvent value)? themeModeChangedEvent,
-    TResult Function(LoadAllNeededDataForUserFlowEvent value)?
-        loadAllNeededDataForUserFlowEvent,
     TResult Function(GetAllCountriesNamesAndFlagsEvent value)?
         getAllCountriesNamesAndFlagsEvent,
     TResult Function(GetCurrencyConversionHistoryEvent value)?
@@ -1582,7 +1325,6 @@ class _$UpdateToCountrySelectedEventImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() themeModeChangedEvent,
-    required TResult Function() loadAllNeededDataForUserFlowEvent,
     required TResult Function() getAllCountriesNamesAndFlagsEvent,
     required TResult Function() getCurrencyConversionHistoryEvent,
     required TResult Function(ValidatedNormalString fromCurrency,
@@ -1607,7 +1349,6 @@ class _$UpdateToCountrySelectedEventImpl
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? themeModeChangedEvent,
-    TResult? Function()? loadAllNeededDataForUserFlowEvent,
     TResult? Function()? getAllCountriesNamesAndFlagsEvent,
     TResult? Function()? getCurrencyConversionHistoryEvent,
     TResult? Function(ValidatedNormalString fromCurrency,
@@ -1628,7 +1369,6 @@ class _$UpdateToCountrySelectedEventImpl
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? themeModeChangedEvent,
-    TResult Function()? loadAllNeededDataForUserFlowEvent,
     TResult Function()? getAllCountriesNamesAndFlagsEvent,
     TResult Function()? getCurrencyConversionHistoryEvent,
     TResult Function(ValidatedNormalString fromCurrency,
@@ -1654,8 +1394,6 @@ class _$UpdateToCountrySelectedEventImpl
   TResult map<TResult extends Object?>({
     required TResult Function(ThemeModeChangedEvent value)
         themeModeChangedEvent,
-    required TResult Function(LoadAllNeededDataForUserFlowEvent value)
-        loadAllNeededDataForUserFlowEvent,
     required TResult Function(GetAllCountriesNamesAndFlagsEvent value)
         getAllCountriesNamesAndFlagsEvent,
     required TResult Function(GetCurrencyConversionHistoryEvent value)
@@ -1680,8 +1418,6 @@ class _$UpdateToCountrySelectedEventImpl
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ThemeModeChangedEvent value)? themeModeChangedEvent,
-    TResult? Function(LoadAllNeededDataForUserFlowEvent value)?
-        loadAllNeededDataForUserFlowEvent,
     TResult? Function(GetAllCountriesNamesAndFlagsEvent value)?
         getAllCountriesNamesAndFlagsEvent,
     TResult? Function(GetCurrencyConversionHistoryEvent value)?
@@ -1706,8 +1442,6 @@ class _$UpdateToCountrySelectedEventImpl
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ThemeModeChangedEvent value)? themeModeChangedEvent,
-    TResult Function(LoadAllNeededDataForUserFlowEvent value)?
-        loadAllNeededDataForUserFlowEvent,
     TResult Function(GetAllCountriesNamesAndFlagsEvent value)?
         getAllCountriesNamesAndFlagsEvent,
     TResult Function(GetCurrencyConversionHistoryEvent value)?
@@ -1823,7 +1557,6 @@ class _$UpdateNumberOfWeeksForHistoryEventImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() themeModeChangedEvent,
-    required TResult Function() loadAllNeededDataForUserFlowEvent,
     required TResult Function() getAllCountriesNamesAndFlagsEvent,
     required TResult Function() getCurrencyConversionHistoryEvent,
     required TResult Function(ValidatedNormalString fromCurrency,
@@ -1848,7 +1581,6 @@ class _$UpdateNumberOfWeeksForHistoryEventImpl
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? themeModeChangedEvent,
-    TResult? Function()? loadAllNeededDataForUserFlowEvent,
     TResult? Function()? getAllCountriesNamesAndFlagsEvent,
     TResult? Function()? getCurrencyConversionHistoryEvent,
     TResult? Function(ValidatedNormalString fromCurrency,
@@ -1869,7 +1601,6 @@ class _$UpdateNumberOfWeeksForHistoryEventImpl
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? themeModeChangedEvent,
-    TResult Function()? loadAllNeededDataForUserFlowEvent,
     TResult Function()? getAllCountriesNamesAndFlagsEvent,
     TResult Function()? getCurrencyConversionHistoryEvent,
     TResult Function(ValidatedNormalString fromCurrency,
@@ -1895,8 +1626,6 @@ class _$UpdateNumberOfWeeksForHistoryEventImpl
   TResult map<TResult extends Object?>({
     required TResult Function(ThemeModeChangedEvent value)
         themeModeChangedEvent,
-    required TResult Function(LoadAllNeededDataForUserFlowEvent value)
-        loadAllNeededDataForUserFlowEvent,
     required TResult Function(GetAllCountriesNamesAndFlagsEvent value)
         getAllCountriesNamesAndFlagsEvent,
     required TResult Function(GetCurrencyConversionHistoryEvent value)
@@ -1921,8 +1650,6 @@ class _$UpdateNumberOfWeeksForHistoryEventImpl
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ThemeModeChangedEvent value)? themeModeChangedEvent,
-    TResult? Function(LoadAllNeededDataForUserFlowEvent value)?
-        loadAllNeededDataForUserFlowEvent,
     TResult? Function(GetAllCountriesNamesAndFlagsEvent value)?
         getAllCountriesNamesAndFlagsEvent,
     TResult? Function(GetCurrencyConversionHistoryEvent value)?
@@ -1947,8 +1674,6 @@ class _$UpdateNumberOfWeeksForHistoryEventImpl
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ThemeModeChangedEvent value)? themeModeChangedEvent,
-    TResult Function(LoadAllNeededDataForUserFlowEvent value)?
-        loadAllNeededDataForUserFlowEvent,
     TResult Function(GetAllCountriesNamesAndFlagsEvent value)?
         getAllCountriesNamesAndFlagsEvent,
     TResult Function(GetCurrencyConversionHistoryEvent value)?
@@ -2064,7 +1789,6 @@ class _$UpdateFromCurrencyValueEventImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() themeModeChangedEvent,
-    required TResult Function() loadAllNeededDataForUserFlowEvent,
     required TResult Function() getAllCountriesNamesAndFlagsEvent,
     required TResult Function() getCurrencyConversionHistoryEvent,
     required TResult Function(ValidatedNormalString fromCurrency,
@@ -2089,7 +1813,6 @@ class _$UpdateFromCurrencyValueEventImpl
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? themeModeChangedEvent,
-    TResult? Function()? loadAllNeededDataForUserFlowEvent,
     TResult? Function()? getAllCountriesNamesAndFlagsEvent,
     TResult? Function()? getCurrencyConversionHistoryEvent,
     TResult? Function(ValidatedNormalString fromCurrency,
@@ -2110,7 +1833,6 @@ class _$UpdateFromCurrencyValueEventImpl
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? themeModeChangedEvent,
-    TResult Function()? loadAllNeededDataForUserFlowEvent,
     TResult Function()? getAllCountriesNamesAndFlagsEvent,
     TResult Function()? getCurrencyConversionHistoryEvent,
     TResult Function(ValidatedNormalString fromCurrency,
@@ -2136,8 +1858,6 @@ class _$UpdateFromCurrencyValueEventImpl
   TResult map<TResult extends Object?>({
     required TResult Function(ThemeModeChangedEvent value)
         themeModeChangedEvent,
-    required TResult Function(LoadAllNeededDataForUserFlowEvent value)
-        loadAllNeededDataForUserFlowEvent,
     required TResult Function(GetAllCountriesNamesAndFlagsEvent value)
         getAllCountriesNamesAndFlagsEvent,
     required TResult Function(GetCurrencyConversionHistoryEvent value)
@@ -2162,8 +1882,6 @@ class _$UpdateFromCurrencyValueEventImpl
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ThemeModeChangedEvent value)? themeModeChangedEvent,
-    TResult? Function(LoadAllNeededDataForUserFlowEvent value)?
-        loadAllNeededDataForUserFlowEvent,
     TResult? Function(GetAllCountriesNamesAndFlagsEvent value)?
         getAllCountriesNamesAndFlagsEvent,
     TResult? Function(GetCurrencyConversionHistoryEvent value)?
@@ -2188,8 +1906,6 @@ class _$UpdateFromCurrencyValueEventImpl
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ThemeModeChangedEvent value)? themeModeChangedEvent,
-    TResult Function(LoadAllNeededDataForUserFlowEvent value)?
-        loadAllNeededDataForUserFlowEvent,
     TResult Function(GetAllCountriesNamesAndFlagsEvent value)?
         getAllCountriesNamesAndFlagsEvent,
     TResult Function(GetCurrencyConversionHistoryEvent value)?
@@ -2277,7 +1993,6 @@ class _$UpdateIsCurrencyFlippedEventImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() themeModeChangedEvent,
-    required TResult Function() loadAllNeededDataForUserFlowEvent,
     required TResult Function() getAllCountriesNamesAndFlagsEvent,
     required TResult Function() getCurrencyConversionHistoryEvent,
     required TResult Function(ValidatedNormalString fromCurrency,
@@ -2302,7 +2017,6 @@ class _$UpdateIsCurrencyFlippedEventImpl
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? themeModeChangedEvent,
-    TResult? Function()? loadAllNeededDataForUserFlowEvent,
     TResult? Function()? getAllCountriesNamesAndFlagsEvent,
     TResult? Function()? getCurrencyConversionHistoryEvent,
     TResult? Function(ValidatedNormalString fromCurrency,
@@ -2323,7 +2037,6 @@ class _$UpdateIsCurrencyFlippedEventImpl
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? themeModeChangedEvent,
-    TResult Function()? loadAllNeededDataForUserFlowEvent,
     TResult Function()? getAllCountriesNamesAndFlagsEvent,
     TResult Function()? getCurrencyConversionHistoryEvent,
     TResult Function(ValidatedNormalString fromCurrency,
@@ -2349,8 +2062,6 @@ class _$UpdateIsCurrencyFlippedEventImpl
   TResult map<TResult extends Object?>({
     required TResult Function(ThemeModeChangedEvent value)
         themeModeChangedEvent,
-    required TResult Function(LoadAllNeededDataForUserFlowEvent value)
-        loadAllNeededDataForUserFlowEvent,
     required TResult Function(GetAllCountriesNamesAndFlagsEvent value)
         getAllCountriesNamesAndFlagsEvent,
     required TResult Function(GetCurrencyConversionHistoryEvent value)
@@ -2375,8 +2086,6 @@ class _$UpdateIsCurrencyFlippedEventImpl
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ThemeModeChangedEvent value)? themeModeChangedEvent,
-    TResult? Function(LoadAllNeededDataForUserFlowEvent value)?
-        loadAllNeededDataForUserFlowEvent,
     TResult? Function(GetAllCountriesNamesAndFlagsEvent value)?
         getAllCountriesNamesAndFlagsEvent,
     TResult? Function(GetCurrencyConversionHistoryEvent value)?
@@ -2401,8 +2110,6 @@ class _$UpdateIsCurrencyFlippedEventImpl
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ThemeModeChangedEvent value)? themeModeChangedEvent,
-    TResult Function(LoadAllNeededDataForUserFlowEvent value)?
-        loadAllNeededDataForUserFlowEvent,
     TResult Function(GetAllCountriesNamesAndFlagsEvent value)?
         getAllCountriesNamesAndFlagsEvent,
     TResult Function(GetCurrencyConversionHistoryEvent value)?

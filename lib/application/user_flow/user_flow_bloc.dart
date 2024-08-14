@@ -28,7 +28,6 @@ class UserFlowBloc extends Bloc<UserFlowEvent, UserFlowState> {
     this.getCurrencyConversionNow,
   ) : super(UserFlowState.initial()) {
     on<ThemeModeChangedEvent>(_onThemeModeChangedEvent, transformer: restartable());
-    on<LoadAllNeededDataForUserFlowEvent>(_onLoadAllNeededDataForUserFlowEvent, transformer: restartable());
     on<GetAllCountriesNamesAndFlagsEvent>(_onGetAllCountriesNamesAndFlagsEvent, transformer: restartable());
     on<GetCurrencyConversionNowEvent>(_onGetCurrencyConversionNowEvent, transformer: restartable());
     on<GetCurrencyConversionHistoryEvent>(_onGetCurrencyConversionHistoryEvent, transformer: restartable());
@@ -37,9 +36,6 @@ class UserFlowBloc extends Bloc<UserFlowEvent, UserFlowState> {
     on<UpdateIsCurrencyFlippedEvent>(_onUpdateIsCurrencyFlippedEvent, transformer: restartable());
     on<UpdateFromCountrySelectedEvent>(_onUpdateFromCountrySelectedEvent, transformer: restartable());
     on<UpdateToCountrySelectedEvent>(_onUpdateToCountrySelectedEvent, transformer: restartable());
-
-    // to start preparing the data ASAP
-    add(const UserFlowEvent.loadAllNeededDataForUserFlowEvent());
   }
 
   Future<void> _onThemeModeChangedEvent(ThemeModeChangedEvent event, Emitter<UserFlowState> emit) async {
@@ -47,10 +43,6 @@ class UserFlowBloc extends Bloc<UserFlowEvent, UserFlowState> {
       placeHolderForThemeChange: !state.placeHolderForThemeChange,
       userFlowFailureOrSuccessOption: none(),
     ));
-  }
-
-  Future<void> _onLoadAllNeededDataForUserFlowEvent(LoadAllNeededDataForUserFlowEvent event, Emitter<UserFlowState> emit) async {
-    add(const UserFlowEvent.getAllCountriesNamesAndFlagsEvent());
   }
 
   Future<void> _onGetAllCountriesNamesAndFlagsEvent(GetAllCountriesNamesAndFlagsEvent event, Emitter<UserFlowState> emit) async {
@@ -69,32 +61,37 @@ class UserFlowBloc extends Bloc<UserFlowEvent, UserFlowState> {
                   )),
             ), (model) {
       if (state.currencyConversionModel.isNone()) {
-        late CountryNamesWithFlagsModel fromCountry;
-        late CountryNamesWithFlagsModel toCountry;
+        Option<CountryNamesWithFlagsModel> fromCountry = none();
+        Option<CountryNamesWithFlagsModel> toCountry = none();
         for (int i = 0; i < model.size; i++) {
-          if (model[i].countryFullName.getOrCrash() == 'United Kingdom') {
-            toCountry = model[i];
-          } else if (model[i].countryFullName.getOrCrash() == 'United States of America') {
-            fromCountry = model[i];
+          if (model[i].countryShortName.getOrCrash() == 'KW') {
+            toCountry = some(model[i]);
+          } else if (model[i].countryShortName.getOrCrash() == 'US') {
+            fromCountry = some(model[i]);
           }
         }
 
-        add(UserFlowEvent.getCurrencyConversionNowEvent(
-          fromCurrency: fromCountry.currencyId,
-          toCurrency: toCountry.currencyId,
-        ));
-
-        emit(state.copyWith(
-          toCountrySelected: some(toCountry),
-          fromCountrySelected: some(fromCountry),
-        ));
+        if (fromCountry.isNone() || toCountry.isNone()) {
+          emit(state.copyWith(
+            userFlowFailureOrSuccessOption: some(left(const UserFlowFailure.serverError())),
+          ));
+        } else {
+          emit(state.copyWith(
+            isLoadingForCountriesAndFlags: false,
+            countryNamesWithFlagsModels: some(model),
+            toCountrySelected: toCountry,
+            fromCountrySelected: fromCountry,
+            userFlowFailureOrSuccessOption: some(right(none())),
+          ));
+        }
       }
 
-      emit(state.copyWith(
-        isLoadingForCountriesAndFlags: false,
-        countryNamesWithFlagsModels: some(model),
-        userFlowFailureOrSuccessOption: some(right(none())),
-      ));
+      if (state.fromCountrySelected.isSome() && state.toCountrySelected.isSome()) {
+        add(UserFlowEvent.getCurrencyConversionNowEvent(
+          fromCurrency: state.toCountrySelected.getOrElse(() => throw UnexpectedNullValueError).currencyId,
+          toCurrency: state.fromCountrySelected.getOrElse(() => throw UnexpectedNullValueError).currencyId,
+        ));
+      }
     });
   }
 
@@ -187,7 +184,7 @@ class UserFlowBloc extends Bloc<UserFlowEvent, UserFlowState> {
       state.toCurrencyTextEditingController.clear();
       emit(state.copyWith(
         fromCurrencyValue: event.number,
-        toCurrencyValue: ValidatedDouble('0.0'),
+        toCurrencyValue: ValidatedDouble.fromNumber(0.0),
         userFlowFailureOrSuccessOption: some(left(const UserFlowFailure.serverError())),
       ));
     } else {
@@ -227,7 +224,7 @@ class UserFlowBloc extends Bloc<UserFlowEvent, UserFlowState> {
     state.currencyConversionModel.fold(() {
       state.toCurrencyTextEditingController.clear();
       emit(state.copyWith(
-        toCurrencyValue: ValidatedDouble('0.0'),
+        toCurrencyValue: ValidatedDouble.fromNumber(0.0),
         userFlowFailureOrSuccessOption: some(left(const UserFlowFailure.serverError())),
       ));
     }, (currencyConversion) {
@@ -264,12 +261,18 @@ class UserFlowBloc extends Bloc<UserFlowEvent, UserFlowState> {
       userFlowFailureOrSuccessOption: none(),
     ));
 
-    add(
-      UserFlowEvent.getCurrencyConversionNowEvent(
-        fromCurrency: event.countryNamesWithFlagsModel.currencyId,
-        toCurrency: state.toCountrySelected.getOrElse(() => throw UnexpectedNullValueError()).currencyId,
-      ),
-    );
+    state.toCountrySelected.fold(() {
+      emit(state.copyWith(
+        userFlowFailureOrSuccessOption: some(left(const UserFlowFailure.serverError())),
+      ));
+    }, (toCountrySelected) {
+      add(
+        UserFlowEvent.getCurrencyConversionNowEvent(
+          fromCurrency: event.countryNamesWithFlagsModel.currencyId,
+          toCurrency: toCountrySelected.currencyId,
+        ),
+      );
+    });
   }
 
   Future<void> _onUpdateToCountrySelectedEvent(UpdateToCountrySelectedEvent event, Emitter<UserFlowState> emit) async {
@@ -286,11 +289,17 @@ class UserFlowBloc extends Bloc<UserFlowEvent, UserFlowState> {
       userFlowFailureOrSuccessOption: none(),
     ));
 
-    add(
-      UserFlowEvent.getCurrencyConversionNowEvent(
-        fromCurrency: state.fromCountrySelected.getOrElse(() => throw UnexpectedNullValueError()).currencyId,
-        toCurrency: event.countryNamesWithFlagsModel.currencyId,
-      ),
-    );
+    state.fromCountrySelected.fold(() {
+      emit(state.copyWith(
+        userFlowFailureOrSuccessOption: some(left(const UserFlowFailure.serverError())),
+      ));
+    }, (fromCountrySelected) {
+      add(
+        UserFlowEvent.getCurrencyConversionNowEvent(
+          fromCurrency: fromCountrySelected.currencyId,
+          toCurrency: event.countryNamesWithFlagsModel.currencyId,
+        ),
+      );
+    });
   }
 }

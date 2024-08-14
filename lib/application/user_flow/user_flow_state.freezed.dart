@@ -31,9 +31,9 @@ mixin _$UserFlowState {
       throw _privateConstructorUsedError;
   ValidatedDouble get fromCurrencyValue => throw _privateConstructorUsedError;
   ValidatedDouble get toCurrencyValue => throw _privateConstructorUsedError;
-  TextEditingController get fromCurrencyTextEditingController =>
+  CustomTextEditingController get fromCurrencyTextEditingController =>
       throw _privateConstructorUsedError;
-  TextEditingController get toCurrencyTextEditingController =>
+  CustomTextEditingController get toCurrencyTextEditingController =>
       throw _privateConstructorUsedError;
   Option<CountryNamesWithFlagsModel> get fromCountrySelected =>
       throw _privateConstructorUsedError;
@@ -68,8 +68,8 @@ abstract class $UserFlowStateCopyWith<$Res> {
       Option<ConversionHistoryModel> conversionHistoryModel,
       ValidatedDouble fromCurrencyValue,
       ValidatedDouble toCurrencyValue,
-      TextEditingController fromCurrencyTextEditingController,
-      TextEditingController toCurrencyTextEditingController,
+      CustomTextEditingController fromCurrencyTextEditingController,
+      CustomTextEditingController toCurrencyTextEditingController,
       Option<CountryNamesWithFlagsModel> fromCountrySelected,
       Option<CountryNamesWithFlagsModel> toCountrySelected,
       bool isCurrencyFlipped,
@@ -151,11 +151,11 @@ class _$UserFlowStateCopyWithImpl<$Res, $Val extends UserFlowState>
               fromCurrencyTextEditingController
           ? _value.fromCurrencyTextEditingController
           : fromCurrencyTextEditingController // ignore: cast_nullable_to_non_nullable
-              as TextEditingController,
+              as CustomTextEditingController,
       toCurrencyTextEditingController: null == toCurrencyTextEditingController
           ? _value.toCurrencyTextEditingController
           : toCurrencyTextEditingController // ignore: cast_nullable_to_non_nullable
-              as TextEditingController,
+              as CustomTextEditingController,
       fromCountrySelected: null == fromCountrySelected
           ? _value.fromCountrySelected
           : fromCountrySelected // ignore: cast_nullable_to_non_nullable
@@ -198,8 +198,8 @@ abstract class _$$userFlowStateImplCopyWith<$Res>
       Option<ConversionHistoryModel> conversionHistoryModel,
       ValidatedDouble fromCurrencyValue,
       ValidatedDouble toCurrencyValue,
-      TextEditingController fromCurrencyTextEditingController,
-      TextEditingController toCurrencyTextEditingController,
+      CustomTextEditingController fromCurrencyTextEditingController,
+      CustomTextEditingController toCurrencyTextEditingController,
       Option<CountryNamesWithFlagsModel> fromCountrySelected,
       Option<CountryNamesWithFlagsModel> toCountrySelected,
       bool isCurrencyFlipped,
@@ -279,11 +279,11 @@ class __$$userFlowStateImplCopyWithImpl<$Res>
               fromCurrencyTextEditingController
           ? _value.fromCurrencyTextEditingController
           : fromCurrencyTextEditingController // ignore: cast_nullable_to_non_nullable
-              as TextEditingController,
+              as CustomTextEditingController,
       toCurrencyTextEditingController: null == toCurrencyTextEditingController
           ? _value.toCurrencyTextEditingController
           : toCurrencyTextEditingController // ignore: cast_nullable_to_non_nullable
-              as TextEditingController,
+              as CustomTextEditingController,
       fromCountrySelected: null == fromCountrySelected
           ? _value.fromCountrySelected
           : fromCountrySelected // ignore: cast_nullable_to_non_nullable
@@ -351,9 +351,9 @@ class _$userFlowStateImpl implements _userFlowState {
   @override
   final ValidatedDouble toCurrencyValue;
   @override
-  final TextEditingController fromCurrencyTextEditingController;
+  final CustomTextEditingController fromCurrencyTextEditingController;
   @override
-  final TextEditingController toCurrencyTextEditingController;
+  final CustomTextEditingController toCurrencyTextEditingController;
   @override
   final Option<CountryNamesWithFlagsModel> fromCountrySelected;
   @override
@@ -457,8 +457,10 @@ abstract class _userFlowState implements UserFlowState {
       required final Option<ConversionHistoryModel> conversionHistoryModel,
       required final ValidatedDouble fromCurrencyValue,
       required final ValidatedDouble toCurrencyValue,
-      required final TextEditingController fromCurrencyTextEditingController,
-      required final TextEditingController toCurrencyTextEditingController,
+      required final CustomTextEditingController
+          fromCurrencyTextEditingController,
+      required final CustomTextEditingController
+          toCurrencyTextEditingController,
       required final Option<CountryNamesWithFlagsModel> fromCountrySelected,
       required final Option<CountryNamesWithFlagsModel> toCountrySelected,
       required final bool isCurrencyFlipped,
@@ -488,9 +490,9 @@ abstract class _userFlowState implements UserFlowState {
   @override
   ValidatedDouble get toCurrencyValue;
   @override
-  TextEditingController get fromCurrencyTextEditingController;
+  CustomTextEditingController get fromCurrencyTextEditingController;
   @override
-  TextEditingController get toCurrencyTextEditingController;
+  CustomTextEditingController get toCurrencyTextEditingController;
   @override
   Option<CountryNamesWithFlagsModel> get fromCountrySelected;
   @override

@@ -41,7 +41,8 @@ abstract class CurrencyConverterService extends ChopperService {
   });
 
   @factoryMethod
-  static CurrencyConverterService create({required String baseUrl, required String apiKey}) {
+  static CurrencyConverterService create(
+      {@Named('currencyConverterBaseUrl') required String baseUrl, @Named('currencyConverterApiKey') required String apiKey}) {
     final client = ChopperClient(
       baseUrl: Uri.parse(baseUrl),
       services: [

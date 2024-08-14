@@ -39,7 +39,7 @@ class UserFlowFacade implements IUserFlowFacade {
         return responseOfCurrencyConverter.fold(
             (responseError) => left(
                   handelResponseErrorMessages(responseError),
-                ), (countryNamesWithFlagsModelDriftList) {
+                ), (countryNamesWithFlagsModelDriftList) async {
           if (countryNamesWithFlagsModelDriftList.isEmpty) {
             debugPrint('Error happened in [getAllCountriesNamesAndFlags] for [Null Value] message: countryNamesWithFlagsModelDriftList.isEmpty');
             return left(const UserFlowFailure.serverError());
@@ -48,16 +48,16 @@ class UserFlowFacade implements IUserFlowFacade {
           // we will move to the next level which is getting the data the flags
           // then will insert the combined data into our local DB and return it to the user
           List<CountryNamesWithFlagsModel> countryNamesWIthFlagsModeList = [];
-          countryNamesWithFlagsModelDriftList.forEach((countryElementModel) async {
+          for (int i = 0; i < countryNamesWithFlagsModelDriftList.length; i++) {
             final flagValue = await _flagCdnRepository.getCountryFlag(
-              countryCode: countryElementModel.countryShortName!.toLowerCase(),
+              countryCode: countryNamesWithFlagsModelDriftList[i].countryShortName!.toLowerCase(),
             );
-            final updatedCountryElementModel = countryElementModel.copyWith(
+            final updatedCountryElementModel = countryNamesWithFlagsModelDriftList[i].copyWith(
               currencyFlagSvg: flagValue,
             );
-            _countryNamesWithFlagsDriftDaoRepository.insertCountryWithFlags(updatedCountryElementModel.toDrift());
+            await _countryNamesWithFlagsDriftDaoRepository.insertCountryWithFlags(updatedCountryElementModel.toDrift());
             countryNamesWIthFlagsModeList.add(updatedCountryElementModel.toDomain());
-          });
+          }
           return right(countryNamesWIthFlagsModeList.toImmutableList());
         });
       } else {

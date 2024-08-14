@@ -10,7 +10,6 @@ part 'user_flow_event.freezed.dart';
 abstract class UserFlowEvent with _$UserFlowEvent {
   // General Events
   const factory UserFlowEvent.themeModeChangedEvent() = ThemeModeChangedEvent;
-  const factory UserFlowEvent.loadAllNeededDataForUserFlowEvent() = LoadAllNeededDataForUserFlowEvent;
 
   // User Flow Actions
   const factory UserFlowEvent.getAllCountriesNamesAndFlagsEvent() = GetAllCountriesNamesAndFlagsEvent;

@@ -27,8 +27,8 @@ abstract class UserFlowState with _$UserFlowState {
     required Option<ConversionHistoryModel> conversionHistoryModel,
     required ValidatedDouble fromCurrencyValue,
     required ValidatedDouble toCurrencyValue,
-    required TextEditingController fromCurrencyTextEditingController,
-    required TextEditingController toCurrencyTextEditingController,
+    required CustomTextEditingController fromCurrencyTextEditingController,
+    required CustomTextEditingController toCurrencyTextEditingController,
     required Option<CountryNamesWithFlagsModel> fromCountrySelected,
     required Option<CountryNamesWithFlagsModel> toCountrySelected,
     required bool isCurrencyFlipped,
@@ -46,12 +46,28 @@ abstract class UserFlowState with _$UserFlowState {
         conversionHistoryModel: none(),
         fromCountrySelected: none(),
         toCountrySelected: none(),
-        fromCurrencyTextEditingController: TextEditingController(),
-        toCurrencyTextEditingController: TextEditingController(),
-        fromCurrencyValue: ValidatedDouble('0.0'),
-        toCurrencyValue: ValidatedDouble('0.0'),
+        fromCurrencyTextEditingController: CustomTextEditingController(),
+        toCurrencyTextEditingController: CustomTextEditingController(),
+        fromCurrencyValue: ValidatedDouble.fromNumber(0.0),
+        toCurrencyValue: ValidatedDouble.fromNumber(0.0),
         numberOfWeeksForHistory: ValidatedInt('1'),
         isCurrencyFlipped: false,
         userFlowFailureOrSuccessOption: none(),
       );
+}
+
+/// Custom TextEditingController to be used in the `UserFlowState` to compare the equality of the `TextEditingController`.
+class CustomTextEditingController extends TextEditingController {
+  CustomTextEditingController({super.text});
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    if (other.runtimeType != runtimeType) return false;
+
+    return other is CustomTextEditingController && other.text == text; // Check equality based on text
+  }
+
+  @override
+  int get hashCode => text.hashCode; // Generate hash code based on text
 }
