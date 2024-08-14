@@ -41,6 +41,7 @@ class CurrencyConverterRepositoryImpl implements CurrencyConverterRepository {
   /// [endDate] of type [String] which represents the end date of the history.
   /// It returns a [Future] of [Either] [String] or [ConversionHistoryModelDto].
   /// It calls the [getCurrencyConversionHistory] method from the [CurrencyConverterService] class.  @override
+  @override
   Future<Either<String, ConversionHistoryModelDto>> getCurrencyConversionHistory(
       {required String fromAndToMultipleCurrencies, required String startDate, required String endDate}) {
     return currencyConverterService

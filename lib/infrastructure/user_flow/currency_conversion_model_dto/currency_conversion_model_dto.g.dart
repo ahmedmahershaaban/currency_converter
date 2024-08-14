@@ -9,8 +9,8 @@ part of 'currency_conversion_model_dto.dart';
 _$currencyConversionModelDtoImpl _$$currencyConversionModelDtoImplFromJson(
         Map json) =>
     _$currencyConversionModelDtoImpl(
-      fromToConversion: json['fromToConversion'] as String?,
-      toFromConversion: json['toFromConversion'] as String?,
+      fromToConversion: (json['fromToConversion'] as num).toDouble(),
+      toFromConversion: (json['toFromConversion'] as num).toDouble(),
     );
 
 Map<String, dynamic> _$$currencyConversionModelDtoImplToJson(

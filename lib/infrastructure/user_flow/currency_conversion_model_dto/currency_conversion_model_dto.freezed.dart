@@ -22,10 +22,10 @@ CurrencyConversionModelDto _$CurrencyConversionModelDtoFromJson(
 /// @nodoc
 mixin _$CurrencyConversionModelDto {
   /// Country full name.
-  String? get fromToConversion => throw _privateConstructorUsedError;
+  double get fromToConversion => throw _privateConstructorUsedError;
 
   /// Country short name in (ISO 3166 country code) format.
-  String? get toFromConversion => throw _privateConstructorUsedError;
+  double get toFromConversion => throw _privateConstructorUsedError;
 
   /// Serializes this CurrencyConversionModelDto to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -44,7 +44,7 @@ abstract class $CurrencyConversionModelDtoCopyWith<$Res> {
       _$CurrencyConversionModelDtoCopyWithImpl<$Res,
           CurrencyConversionModelDto>;
   @useResult
-  $Res call({String? fromToConversion, String? toFromConversion});
+  $Res call({double fromToConversion, double toFromConversion});
 }
 
 /// @nodoc
@@ -63,18 +63,18 @@ class _$CurrencyConversionModelDtoCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? fromToConversion = freezed,
-    Object? toFromConversion = freezed,
+    Object? fromToConversion = null,
+    Object? toFromConversion = null,
   }) {
     return _then(_value.copyWith(
-      fromToConversion: freezed == fromToConversion
+      fromToConversion: null == fromToConversion
           ? _value.fromToConversion
           : fromToConversion // ignore: cast_nullable_to_non_nullable
-              as String?,
-      toFromConversion: freezed == toFromConversion
+              as double,
+      toFromConversion: null == toFromConversion
           ? _value.toFromConversion
           : toFromConversion // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as double,
     ) as $Val);
   }
 }
@@ -88,7 +88,7 @@ abstract class _$$currencyConversionModelDtoImplCopyWith<$Res>
       __$$currencyConversionModelDtoImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? fromToConversion, String? toFromConversion});
+  $Res call({double fromToConversion, double toFromConversion});
 }
 
 /// @nodoc
@@ -106,18 +106,18 @@ class __$$currencyConversionModelDtoImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? fromToConversion = freezed,
-    Object? toFromConversion = freezed,
+    Object? fromToConversion = null,
+    Object? toFromConversion = null,
   }) {
     return _then(_$currencyConversionModelDtoImpl(
-      fromToConversion: freezed == fromToConversion
+      fromToConversion: null == fromToConversion
           ? _value.fromToConversion
           : fromToConversion // ignore: cast_nullable_to_non_nullable
-              as String?,
-      toFromConversion: freezed == toFromConversion
+              as double,
+      toFromConversion: null == toFromConversion
           ? _value.toFromConversion
           : toFromConversion // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as double,
     ));
   }
 }
@@ -135,11 +135,11 @@ class _$currencyConversionModelDtoImpl extends _currencyConversionModelDto {
 
   /// Country full name.
   @override
-  final String? fromToConversion;
+  final double fromToConversion;
 
   /// Country short name in (ISO 3166 country code) format.
   @override
-  final String? toFromConversion;
+  final double toFromConversion;
 
   @override
   String toString() {
@@ -181,8 +181,8 @@ class _$currencyConversionModelDtoImpl extends _currencyConversionModelDto {
 
 abstract class _currencyConversionModelDto extends CurrencyConversionModelDto {
   const factory _currencyConversionModelDto(
-          {required final String? fromToConversion,
-          required final String? toFromConversion}) =
+          {required final double fromToConversion,
+          required final double toFromConversion}) =
       _$currencyConversionModelDtoImpl;
   const _currencyConversionModelDto._() : super._();
 
@@ -191,11 +191,11 @@ abstract class _currencyConversionModelDto extends CurrencyConversionModelDto {
 
   /// Country full name.
   @override
-  String? get fromToConversion;
+  double get fromToConversion;
 
   /// Country short name in (ISO 3166 country code) format.
   @override
-  String? get toFromConversion;
+  double get toFromConversion;
 
   /// Create a copy of CurrencyConversionModelDto
   /// with the given fields replaced by the non-null parameter values.

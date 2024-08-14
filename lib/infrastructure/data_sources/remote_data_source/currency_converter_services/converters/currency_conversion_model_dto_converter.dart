@@ -10,8 +10,8 @@ Response<BodyType> currencyConversionModelDtoResponseFactory<BodyType, InnerType
   if (body is Map<String, dynamic>) {
     final mapValues = body.values.toList();
     final currencyConversionModelDto = CurrencyConversionModelDto(
-      fromToConversion: mapValues[0].toString(),
-      toFromConversion: mapValues[1].toString(),
+      fromToConversion: mapValues[0],
+      toFromConversion: mapValues[1],
     );
     return response.copyWith<BodyType>(body: currencyConversionModelDto as BodyType);
   } else {
