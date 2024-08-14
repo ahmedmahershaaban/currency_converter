@@ -1,7 +1,13 @@
 name: currency_converter
-description: "Easy to use currency converter app"
-# The following line prevents the package from being accidentally published to
-# pub.dev using `flutter pub publish`. This is preferred for private packages.
+description:
+  A versatile Flutter application designed for seamless currency conversion. 
+  The app integrates Domain-Driven Design (DDD) for a clean, maintainable architecture 
+  and supports multiple environments using Flutter flavors. It features robust database 
+  management with Drift, efficient API handling with Chopper, and comprehensive unit testing. 
+  Includes pixel-perfect UI based on Figma designs, supports dark mode, and provides 
+  an intuitive interface with performance optimizations. Ideal for developers looking 
+  to explore advanced Flutter features and architecture best practices.
+
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 version: 1.0.0+2
@@ -16,7 +22,6 @@ dependencies:
 
   flutter_bloc: ^8.1.6
   bloc_concurrency: ^0.2.5
-  flutter_hooks: ^0.20.5
   auto_route: ^9.2.0
   dartz: ^0.10.1
   freezed_annotation: ^2.4.4
